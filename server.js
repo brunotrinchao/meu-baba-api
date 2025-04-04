@@ -23,11 +23,6 @@ app.use('', verifyToken, teamRoutes);
 app.use('', verifyToken, championshipRoutes);
 app.use('', verifyToken, matchRoutes);
 
-// Iniciar servidor
-// app.listen(PORT, () => {
-//     console.log(`🚀 Servidor rodando em http://localhost:${PORT}`);
-// });
-
 const start = () => {
     try {
       app.listen(PORT, () => {
