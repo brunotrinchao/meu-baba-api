@@ -1,5 +1,4 @@
 const jwt = require('jsonwebtoken');
-const config = require('../config/config'); // Arquivo onde está a configuração do token
 
 const verifyToken = (req, res, next) => {
   const token = req.headers.authorization;
@@ -13,7 +12,7 @@ const verifyToken = (req, res, next) => {
     const tokenValue = token.replace("Bearer ", "");
     
     // Verifica se o token é o mesmo que está no .env
-    if (tokenValue !== config.jwtSecret) {
+    if (tokenValue !== process.env.JWT_SECRET) {
       return res.status(401).json({ error: "Token inválido" });
     }
 
