@@ -1,1 +1,4 @@
-db/
+db/data
+node_modules
+.env
+

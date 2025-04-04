@@ -23,15 +23,8 @@ app.use('', verifyToken, teamRoutes);
 app.use('', verifyToken, championshipRoutes);
 app.use('', verifyToken, matchRoutes);
 
-const start = () => {
-    try {
-      app.listen(PORT, () => {
-        console.log(`🚀 Servidor rodando em http://localhost:${PORT}`);
-    });
-    } catch (err) {
-      console.log(err);
-    }
-  };
-  
-  start();
-  module.exports = app;
+app.listen(PORT, () => {
+  console.log(`🚀 Servidor rodando em http://localhost:${PORT}`);
+});
+
+module.exports = app;
