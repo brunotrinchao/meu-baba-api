@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const verifyToken = require('./middlewares/authMiddleware');
 
 // Importando rotas
+const health = require('./routes/health.routes');
 const teamRoutes = require('./routes/teams.routes');
 const championshipRoutes = require('./routes/championships.routes');
 const matchRoutes = require('./routes/matches.routes');
@@ -17,8 +18,9 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(bodyParser.json());
 // Rotas
+app.use('', health);
 app.use('', verifyToken, teamRoutes);
-app.use('/championships', verifyToken, championshipRoutes);
+app.use('', verifyToken, championshipRoutes);
 app.use('', verifyToken, matchRoutes);
 
 // Iniciar servidor
