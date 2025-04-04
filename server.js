@@ -27,5 +27,3 @@ app.use('', verifyToken, matchRoutes);
 app.listen(PORT, () => {
     console.log(`🚀 Servidor rodando em http://localhost:${PORT}`);
 });
-
-module.exports = app
